@@ -29,4 +29,7 @@ zstyle ':completion:*:default' menu select=1
 # エイリアス設定
 alias ls='ls -G'
 alias ll='ls -laG'
+alias dc='docker-compose'
+alias dce='docker-compose exec'
+alias dcr='docker-compose run'
 
