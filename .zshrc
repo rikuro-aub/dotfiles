@@ -33,3 +33,7 @@ alias dc='docker-compose'
 alias dce='docker-compose exec'
 alias dcr='docker-compose run'
 
+# nvm
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+nvm alias default node
