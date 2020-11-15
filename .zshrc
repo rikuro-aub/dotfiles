@@ -37,3 +37,7 @@ alias dcr='docker-compose run'
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 nvm alias default node
+
+#Android Studioの設定
+export ANDROID_SDK=/Users/3no3/Library/Android/sdk
+export PATH=/Users/3no3/Library/Android/sdk/platform-tools:$PATH
