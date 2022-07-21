@@ -16,9 +16,6 @@ precmd () { vcs_info }
 PROMPT='%{${fg[blue]}%}%* %~ %{${reset_color}%}${vcs_info_msg_0_}
 $ '
 
-# 補完機能を有効化する
-autoload -U compinit && compinit
-
 # 大文字小文字を同一視して補完する
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
@@ -41,3 +38,15 @@ nvm alias default node
 #Android Studioの設定
 export ANDROID_SDK=/Users/3no3/Library/Android/sdk
 export PATH=/Users/3no3/Library/Android/sdk/platform-tools:$PATH
+
+# gitコマンドの補完設定
+mkdir -p ~/.zsh/completion
+cd ~/.zsh/completion
+curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
+mv git-completion.zsh _git
+fpath=(~/.zsh/completion $fpath)
+cd -
+
+# 補完機能を有効化する
+autoload -U compinit && compinit
