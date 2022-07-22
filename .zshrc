@@ -41,19 +41,20 @@ export PATH=/Users/3no3/Library/Android/sdk/platform-tools:$PATH
 
 # gitコマンドの補完設定
 mkdir -p ~/.zsh/completion
-cd ~/.zsh/completion
 
-if [[ ! -f ./git-completion.bash ]]; then
-  curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash
+if [[ ! -f  ~/.zsh/completion/git-completion.bash ]]; then
+  curl \
+    -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash \
+    -o ~/.zsh/completion/git-completion.bash
 fi
 
-if [[ ! -f ./_git ]]; then
-  curl -O https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh
-  mv git-completion.zsh _git
+if [[ ! -f  ~/.zsh/completion/_git ]]; then
+  curl \
+    -L https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.zsh \
+    -o ~/.zsh/completion/_git
 fi
 
 fpath=(~/.zsh/completion $fpath)
-cd -
 
 # dockerコマンドの補完設定
 etc=/Applications/Docker.app/Contents/Resources/etc
