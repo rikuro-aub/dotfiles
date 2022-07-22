@@ -55,5 +55,20 @@ fi
 fpath=(~/.zsh/completion $fpath)
 cd -
 
+# dockerコマンドの補完設定
+etc=/Applications/Docker.app/Contents/Resources/etc
+docker_completion_file=$etc/_docker
+dockercompose_completion_file=$etc/docker-compose.zsh-completion
+docker_completion_link=/usr/local/share/zsh/site-functions/_docker
+dockercompose_completion_link=/usr/local/share/zsh/site-functions/_docker-compose
+
+if [ -f $docker_completion_file -a ! -f $docker_completion_link ]; then
+  ln -s $docker_completion_file $docker_completion_link
+fi
+
+if [ -f $dockercompose_completion_file -a ! -f $dockercompose_completion_link ]; then
+  ln -s $dockercompose_completion_file $dockercompose_completion_link
+fi
+
 # 補完機能を有効化する
 autoload -U compinit && compinit
