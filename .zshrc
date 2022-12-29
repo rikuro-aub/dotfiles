@@ -73,3 +73,8 @@ fi
 
 # 補完機能を有効化する
 autoload -U compinit && compinit
+
+# homebrewからasdfをinstallした場合に必要な設定
+if [ -f /usr/local/opt/asdf/libexec/asdf.sh ]; then
+  source /usr/local/opt/asdf/libexec/asdf.sh
+fi
