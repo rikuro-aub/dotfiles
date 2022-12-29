@@ -36,8 +36,8 @@ alias dcr='docker compose run'
 #nvm alias default node
 
 #Android Studioの設定
-export ANDROID_SDK=/Users/3no3/Library/Android/sdk
-export PATH=/Users/3no3/Library/Android/sdk/platform-tools:$PATH
+export ANDROID_SDK=$HOME/Library/Android/sdk
+export PATH=$HOME/Library/Android/sdk/platform-tools:$PATH
 
 # gitコマンドの補完設定
 mkdir -p ~/.zsh/completion
