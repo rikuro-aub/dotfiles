@@ -75,6 +75,6 @@ fi
 autoload -U compinit && compinit
 
 # homebrewからasdfをinstallした場合に必要な設定
-if [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then
+if [ -e /opt/homebrew ] && [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then
   source $(brew --prefix asdf)/libexec/asdf.sh
 fi
