@@ -74,6 +74,11 @@ fi
 # 補完機能を有効化する
 autoload -U compinit && compinit
 
+# homebrewのpathをとおす
+if [ -e /opt/homebrew ]; then
+  export PATH="$PATH:/opt/homebrew/bin"
+fi
+
 # homebrewからasdfをinstallした場合に必要な設定
 if [ -e /opt/homebrew ] && [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then
   source $(brew --prefix asdf)/libexec/asdf.sh
