@@ -16,6 +16,9 @@ for f in .??*; do
     ln -snfv ~/dotfiles/"$f" ~/"$f"
 done
 
+# homebrewのインストール
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" > /dev/null
+
 cat << END
 
 **************************************************
