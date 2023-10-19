@@ -83,3 +83,17 @@ fi
 if [ -e /opt/homebrew ] && [ -f $(brew --prefix asdf)/libexec/asdf.sh ]; then
   source $(brew --prefix asdf)/libexec/asdf.sh
 fi
+
+# vimカラースキームを設置するディレクトリを作成
+if [ ! -e $HOME/.vim/colors ]; then
+  mkdir -p $HOME/.vim/colors/
+fi
+
+# vimカラースキームのダウンロードと設置
+if [ ! -f $HOME/.vim/colors/hybrid.vim ]; then
+  curl -OL https://github.com/w0ng/vim-hybrid/archive/refs/heads/master.zip
+  unzip ./master.zip
+  cp ./vim-hybrid-master/colors/hybrid.vim $HOME/.vim/colors
+  rm -rf ./vim-hybrid-master
+  rm -f ./master.zip
+fi
