@@ -6,3 +6,6 @@ syntax on
 
 " 行数の表示
 set number
+
+" インデント設定
+:set ts=2
