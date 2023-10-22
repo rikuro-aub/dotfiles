@@ -29,6 +29,8 @@ alias ll='ls -laG'
 alias dc='docker compose'
 alias dce='docker compose exec'
 alias dcr='docker compose run'
+alias gts='git status'
+alias gtlo='git log --oneline'
 
 # nvm
 #export NVM_DIR=~/.nvm
