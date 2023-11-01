@@ -99,3 +99,8 @@ if [ ! -f $HOME/.vim/colors/hybrid.vim ]; then
   rm -rf ./vim-hybrid-master
   rm -f ./master.zip
 fi
+
+# .console-ninjaのpathをとおす
+if [ -e $HOME/.console-ninja ]; then
+  PATH=$HOME/.console-ninja/.bin:$PATH
+fi
