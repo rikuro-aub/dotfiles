@@ -105,15 +105,3 @@ if [ -e $HOME/.console-ninja ]; then
   PATH=$HOME/.console-ninja/.bin:$PATH
 fi
 
-# flutterのダウンロード
-# if [ ! -e $HOME/work/flutter ]; then
-  # curl -OL https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_arm64_3.16.9-stable.zip
-  # unzip ./flutter_macos_arm64_3.16.9-stable.zip $HOME/work/
-  # rm -f ./flutter_macos_arm64_3.16.9-stable.zip
-# fi
-
-# flutterのpathをとおす
-if [ -e $HOME/work/flutter/bin ]; then
-  PATH=$HOME/work/flutter/bin:$PATH
-fi
-
